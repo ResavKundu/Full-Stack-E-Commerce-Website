@@ -1,5 +1,5 @@
 
-const backendDomain="http://localhost:8000";
+const backendDomain= meta.env.VITE_APP_BACKEND_URL; //"http://localhost:8000";
 const SummaryApi={
     SignUP:{
         url:`${backendDomain}/api/signup`,
