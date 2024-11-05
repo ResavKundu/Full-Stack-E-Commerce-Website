@@ -1,16 +1,26 @@
 {
-    "version" : 2,
-    "name" : "Full Stack",
-    "builds" : [
-       {
-         "src" : "./index.js",
-         "use" : "@vercel/node"
-       }
+    "version": 2,
+    "name": "Full-Stack-E-Commerce-Website",
+    "builds": [
+      {
+        "src": "frontend/package.json",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "frontend/dist" }
+      },
+      {
+        "src": "backend/index.js",
+        "use": "@vercel/node"
+      }
     ],
-    "routes" : [
-        {
-            "src" : "/(.*)",
-            "dest" : "/"
-        }
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "/backend/index.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/frontend/dist/$1"
+      }
     ]
-}
+  }
+  
