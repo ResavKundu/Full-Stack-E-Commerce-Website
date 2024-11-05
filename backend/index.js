@@ -6,10 +6,17 @@ const connectDB=require('./config/db')
 const router=require('./routes/index')
 
 const app=express()
-app.use(cors({
-        origin : process.env.FROENTEND_URL,
-        credentials:true
-}))
+// CORS configuration
+const corsOptions = {
+        origin: 'https://full-stack-e-commerce-website-kbch.vercel.app', // Allow your frontend origin
+        methods: ['GET', 'POST', 'OPTIONS'], // Allowed HTTP methods
+        allowedHeaders: ['Content-Type'], // Allowed headers
+    };
+    
+    app.use(cors(corsOptions));
+    // Handle preflight requests
+app.options('*', cors());
+
 app.use(cookieParser())
 app.use(express.json())
 
