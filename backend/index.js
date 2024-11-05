@@ -7,7 +7,7 @@ const router=require('./routes/index')
 
 const app=express()
 app.use(cors({
-        origin : process.env.FROENTEND_URL,
+        origin :'*' ,
         credentials:true
 }))
 app.use(cookieParser())
@@ -20,3 +20,4 @@ connectDB().then(()=>{
         console.log(`Sever start at ${PORT}`);
         })
 })
+// process.env.FROENTEND_URL
