@@ -46,7 +46,7 @@ const VerticalCardProduct = ({
             <button onClick={handleRight} className='bg-white shadow-md absolute right-0 rounded-full p-1 hidden md:block z-10'><FaAngleRight /></button>
         
            {
-            data.map((e,index)=>{
+            loadingList.map((e,index)=>{
                 return(
                     
                     <div className='w-full min-w-[300px] md:min-w-[320px] max-w-[300px] md:max-w-[320px]  bg-white rounded-md shadow-lg mx-3 border'>
