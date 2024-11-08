@@ -50,21 +50,21 @@ const VerticalCardProduct = ({
                 return(
                     
                     <div className='w-full min-w-[300px] md:min-w-[320px] max-w-[300px] md:max-w-[320px]  bg-white rounded-md shadow-lg mx-3 border'>
-                        <div className=' flex justify-center bg-slate-300 animate-pulse  p-2 min-w-[120px] md:min-w-[145px] h-48'>
+                        <div className=' flex justify-center bg-slate-200 animate-pulse  p-2 min-w-[120px] md:min-w-[145px] h-48'>
                             
                         </div>
                         <div>
                             <div className='  justify-center p-3'>  {/*/*text-ellipsis line-clamp-2* */}
                                 <div className='text-ellipsis line-clamp-2 overflow-hidden '>
-                                    <h1 className='font-semibold w-full h-6 bg-slate-300 animate-pulse'></h1> 
+                                    <h1 className='font-semibold w-full h-6 bg-slate-100 animate-pulse'></h1> 
                                 </div>
-                                <p className='my-1 capitalize  w-full h-6 bg-slate-300 animate-pulse'></p>
+                                <p className='my-1 capitalize  w-full h-6 bg-slate-100 animate-pulse rounded-md'></p>
                                 <div className='flex justify-between py-2 gap-3  '>
-                                    <h1 className='text-xl font-semibold  w-full h-6 bg-slate-300 animate-bounce'></h1>
-                                    <h1 className='line-through  w-full h-6 bg-slate-300 animate-bounce'></h1>
+                                    <h1 className='text-xl font-semibold  w-full h-6 bg-slate-100 animate-bounce rounded-md '></h1>
+                                    <h1 className='line-through  w-full h-6 bg-slate-100 animate-bounce rounded-md'></h1>
                                 </div>
                                 {/* <div className='text-sm text-green-800 pb-2'>{Math.round(((e.price-e.sellingPrice)/e.price)*100)}% off</div> */}
-                                <div className=' rounded-full  flex justify-center bg-slate-300 animate- h-8'>
+                                <div className=' rounded-full  flex justify-center bg-slate-100 animate- h-8'>
                                     <button className=' p-2 text-white text-sm' ></button>
                                 </div>
                             </div>

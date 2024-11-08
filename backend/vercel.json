@@ -1,26 +1,30 @@
 {
-    "version": 2,
-    "name": "Full-Stack-E-Commerce-Website",
-    "builds": [
-      {
-        "src": "frontend/package.json",
-        "use": "@vercel/static-build",
-        "config": { "distDir": "frontend/dist" }
-      },
-      {
-        "src": "backend/api/**/*.js",
-        "use": "@vercel/node"
+  "version": 2,
+  "name": "Full-Stack-E-Commerce-Website",
+  "builds": [
+    {
+      "src": "backend/api/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "frontend/dist" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/api/$1",
+      "headers": {
+        "Access-Control-Allow-Origin": "https://full-stack-e-commerce-website-kbch.vercel.app",
+        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/backend/api/$1"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/frontend/dist/$1"
-      }
-    ]
-  }
-  
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/dist/$1"
+    }
+  ]
+}

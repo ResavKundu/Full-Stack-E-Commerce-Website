@@ -85,7 +85,7 @@ const SignUp = () => {
             <from className='pt-8 flex flex-col gap-2' onClick={handleSubmit}>
             <div className='grid mt-5'>
               <label >Name:</label>
-              <div className='bg-slate-100 p-2'>
+              <div className='bg-slate-100 p-2 border border-transparent hover:border-sky-200'>
                  <input 
                         type='name' 
                         placeholder='Enter name..' 
@@ -98,7 +98,7 @@ const SignUp = () => {
             </div>
             <div className='grid'>
               <label >Email:</label>
-              <div className='bg-slate-100 p-2'>
+              <div className='bg-slate-100 p-2 border border-transparent hover:border-sky-200'>
                  <input 
                         type='email' 
                         placeholder='Enter Email..' 
@@ -111,7 +111,7 @@ const SignUp = () => {
             </div>
             <div className='grid'>
               <label>Password:</label>
-              <div className='bg-slate-100 p-2 flex'>
+              <div className='bg-slate-100 p-2 flex border border-transparent hover:border-sky-200'>
                 <input 
                         type={showPassword?"text":"password"} 
                         placeholder='Enter Password..' 
@@ -133,7 +133,7 @@ const SignUp = () => {
             </div>
             <div className='grid'>
               <label>Confirm Password:</label>
-              <div className='bg-slate-100 p-2 flex'>
+              <div className='bg-slate-100 p-2 flex border border-transparent hover:border-sky-200'>
                 <input 
                         type={showConfirmPassword?"text":"password"} 
                         placeholder='Enter Confirm Password..' 
@@ -153,7 +153,7 @@ const SignUp = () => {
                 <NavLink to="/forgotpassword" className="block w-fit ml-auto hover:underline hover:text-red-600">Forgot Password</NavLink>
               </div>
             </div>
-            <button className='bg-red-600 text-yellow-100 px-6 py-2 w-full max-w-[150px] rounded-full hover:scale-105 hover:bg-green-600 transition-all mx-auto block mt-4' >Sign Up</button>
+            <button className='bg-[#89216b] text-yellow-100 px-2 py-2 w-full max-w-[150px] rounded-full  hover:bg-[#cf34a3] border-2 border-transparent border-fuchsia-600 mx-auto block mt-4 transition-all ease-in-out duration-300 font-medium text-base' >Sign Up</button>
           </from>
           <p className='mt-1'>Already have a account ?<NavLink to="/login" className="hover:underline hover:text-red-600 ">Login</NavLink></p>
           </div>
