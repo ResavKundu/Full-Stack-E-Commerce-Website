@@ -11,11 +11,22 @@ const app=express()
 //         credentials:true
 // }))
 const cors = require('cors');
-app.use(cors({
-  origin: 'https://full-stack-e-commerce-website-kbch.vercel.app', // Frontend URL
-  methods: 'GET,POST,PUT,DELETE,OPTIONS',
-  allowedHeaders: 'Content-Type,Authorization'
-}));
+app.use(
+        cors({
+          origin: process.env.FRONTEND_URL, // Corrected spelling
+          credentials: true,
+          methods: "GET,POST,PUT,DELETE,OPTIONS",
+          allowedHeaders: "Content-Type,Authorization",
+        })
+      );
+      
+      // Explicitly handle preflight requests
+      app.options("*", (req, res) => {
+        res.header("Access-Control-Allow-Origin", process.env.FRONTEND_URL);
+        res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+        res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+        res.sendStatus(200);
+      });
 
 app.use(cookieParser())
 app.use(express.json())
