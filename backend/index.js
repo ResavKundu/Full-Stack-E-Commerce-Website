@@ -10,7 +10,6 @@ const app=express()
 //         origin : process.env.FROENTEND_URL,
 //         credentials:true
 // }))
-const cors = require('cors');
 app.use(
         cors({
           origin: process.env.FRONTEND_URL, // Corrected spelling
@@ -21,12 +20,7 @@ app.use(
       );
       
       // Explicitly handle preflight requests
-      app.options("*", (req, res) => {
-        res.header("Access-Control-Allow-Origin", process.env.FRONTEND_URL);
-        res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
-        res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-        res.sendStatus(200);
-      });
+      app.options("*", cors()); 
 
 app.use(cookieParser())
 app.use(express.json())
