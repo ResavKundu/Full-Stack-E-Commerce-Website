@@ -1,16 +1,30 @@
 {
-  "version" : 2,
-  "name" : "Full Stack",
-  "builds" : [
-      {
-          "src" : "./index.js",
-          "use" : "@vercel/node"
-      }
+  "version": 2,
+  "name": "Full Stack",
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
   ],
-  "routes" : [
-      {
-          "src" : "/(.*)",
-          "dest" : "/"
-      }
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization" }
+      ]
+    }
   ]
 }
