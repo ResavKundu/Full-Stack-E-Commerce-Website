@@ -8,6 +8,7 @@ const router=require('./routes/index')
 const app=express()
 app.use(cors({
         origin : process.env.FROENTEND_URL,
+        methods: "GET,POST,PUT,DELETE,OPTIONS",
         credentials:true
 }))
 // app.use(
