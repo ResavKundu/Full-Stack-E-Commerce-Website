@@ -14,8 +14,9 @@ const CategoryWiseProductDisplay = ({
     const fetchData=async()=>{
         setLoading(true);
         const categoryProduct=await fetchCategoryWiseProduct(category);
-        setData(categoryProduct.data);
+        
         setLoading(false);
+        setData(categoryProduct.data);
         console.log(categoryProduct.data)
     }
     const handleLeft=()=>{
