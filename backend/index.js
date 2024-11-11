@@ -7,8 +7,8 @@ const router=require('./routes/index')
 
 const app=express()
 app.use(cors({
-        origin :"https://full-stack-e-commerce-website-kbch.vercel.app",
-       // methods: "GET,POST,PUT,DELETE,OPTIONS",
+        origin : process.env.FROENTEND_URL,
+        methods: "GET,POST,PUT,DELETE,OPTIONS",
         credentials:true
 }))
 // app.use(
