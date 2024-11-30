@@ -8,20 +8,9 @@ const router=require('./routes/index')
 const app=express()
 app.use(cors({
         origin : process.env.FROENTEND_URL,
-        methods: "GET,POST,PUT,DELETE,OPTIONS",
         credentials:true
 }))
-// app.use(
-//         cors({
-//           origin: process.env.FRONTEND_URL, // Corrected spelling
-//           credentials: true,
-//           methods: "GET,POST,PUT,DELETE,OPTIONS",
-//           allowedHeaders: "Content-Type,Authorization",
-//         })
-//       );
-      
-//       // Explicitly handle preflight requests
-//       app.options("*", cors()); 
+
 
 app.use(cookieParser())
 app.use(express.json())
